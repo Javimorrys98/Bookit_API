@@ -11,6 +11,9 @@ dotenv.config();
 // Configura la app
 const app = express();
 
+// Leer datos via body
+app.use(express.json());
+
 //Conectar a la bd
 db();
 

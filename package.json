@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node --watch index.js",
-    "dev": "node --watch index.js"
+    "dev": "node --watch index.js",
+    "seed:import": "node data/seed.js --import",
+    "seed:destroy": "node data/seed.js --destroy"
   },
   "repository": {
     "type": "git",
