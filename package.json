@@ -1,0 +1,27 @@
+{
+  "name": "bookit_api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend Bookit",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch index.js",
+    "dev": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Javimorrys98/Bookit_API.git"
+  },
+  "author": "Javier Tomé",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Javimorrys98/Bookit_API/issues"
+  },
+  "homepage": "https://github.com/Javimorrys98/Bookit_API#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1"
+  }
+}
