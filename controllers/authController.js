@@ -17,7 +17,7 @@ const register = async (req, res) => {
     //Evitar registros con email duplicados
     const userExists = await User.findOne({ email });
     if (userExists) {
-        const error = new Error('Usuario ya registrado.');
+        const error = new Error('Email ya registrado.');
 
         return res.status(400).json({
             msg: error.message
