@@ -8,20 +8,19 @@ const authMiddleware = async (req, res, next) => {
             const decoded = jwt.verify(token, process.env.JWT_SECRET)
             req.user = await User.findById(decoded.id).select('-password -verified -token -__v');
 
-            next();
+            return next();
         } catch {
-            const error = new Error("El token no es válido o no existe.");
-            res.status(403).json({
+            const error = new Error("El token no es válido.");
+            return res.status(403).json({
                 msg: error.message
             })
         }
     } else {
         const error = new Error("El token no es válido o no existe.");
-        res.status(403).json({
+        return res.status(403).json({
             msg: error.message
         })
     }
-    next();
 }
 
 export default authMiddleware;

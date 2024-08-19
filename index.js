@@ -5,6 +5,8 @@ import cors from 'cors';
 import { db } from './config/db.js';
 import servicesRoutes from './routes/servicesRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import bookingRoutes from './routes/bookingRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 // Configura las variables de entorno
 dotenv.config();
@@ -42,6 +44,8 @@ app.use(cors(corsOptions));
 //Definir una ruta
 app.use('/api/services', servicesRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/bookings', bookingRoutes);
+app.use('/api/users', userRoutes);
 
 // Definir un puerto
 const port = process.env.PORT || 4000;
