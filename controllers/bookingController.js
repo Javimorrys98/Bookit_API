@@ -1,6 +1,7 @@
 import { parse, formatISO, startOfDay, endOfDay, isValid } from 'date-fns';
-import { validateObjectId, handleNotFoundError } from '../utils/index.js';
+import { validateObjectId, handleNotFoundError, formatDate } from '../utils/index.js';
 import Booking from '../models/Booking.js';
+import { sendEmailNewBooking, sendEmailUpdateBooking, sendEmailDeleteBooking } from '../emails/bookingEmailService.js';
 
 const createBooking = async (req, res) => {
     const booking = req.body;
@@ -8,7 +9,12 @@ const createBooking = async (req, res) => {
 
     try {
         const newBooking = new Booking(booking);
-        await newBooking.save();
+        const result = await newBooking.save();
+
+        await sendEmailNewBooking({
+            date: formatDate(result.date),
+            time: result.time,
+        });
 
         res.json({
             msg: 'Reserva creada correctamente.',
@@ -92,7 +98,12 @@ const updateBooking = async (req, res) => {
     booking.totalAmount = totalAmount;
 
     try {
-        await booking.save();
+        const result = await booking.save();
+
+        await sendEmailUpdateBooking({
+            date: formatDate(result.date),
+            time: result.time,
+        });
 
         res.json({
             msg: 'Reserva actualizada correctamente.',
@@ -124,6 +135,11 @@ const deleteBooking = async (req, res) => {
 
     try {
         await booking.deleteOne();
+
+        await sendEmailDeleteBooking({
+            date: formatDate(booking.date),
+            time: booking.time,
+        });
 
         res.json({
             msg: 'Reserva cancelada correctamente.',

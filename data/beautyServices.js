@@ -1,82 +1,82 @@
 export const services = [
     {
-        name: 'Corte de pelo para hombres',
-        price: 14
+        name: 'Consulta general',
+        price: 50
     },
     {
-        name: 'Corte de pelo para mujeres',
-        price: 21
+        name: 'Examen de sangre completo',
+        price: 70
     },
     {
-        name: 'Corte de pelo para niños',
-        price: 10
+        name: 'Consulta de pediatría',
+        price: 55
     },
     {
-        name: 'Arreglo de barba y bigote',
-        price: 8
+        name: 'Electrocardiograma',
+        price: 80
     },
     {
-        name: 'Afeitado clásico con navaja',
-        price: 12
+        name: 'Consulta dermatológica',
+        price: 65
     },
     {
-        name: 'Coloración de pelo',
-        price: 15
+        name: 'Vacunación',
+        price: 25
     },
     {
-        name: 'Reflejos y mechas',
-        price: 31
+        name: 'Radiografía de tórax',
+        price: 100
     },
     {
-        name: 'Peinados para bodas y eventos especiales',
-        price: 67
+        name: 'Ecografía abdominal',
+        price: 120
     },
     {
-        name: 'Tratamientos capilares para pelo dañado o quebradizo',
-        price: 53
-    },
-    {
-        name: 'Masajes capilares para estimular el crecimiento del pelo',
-        price: 20
-    },
-    {
-        name: 'Maquillaje para bodas y eventos especiales',
+        name: 'Fisioterapia para rehabilitación',
         price: 45
     },
     {
-        name: 'Manicura y pedicura',
-        price: 21
+        name: 'Terapia respiratoria',
+        price: 60
     },
     {
-        name: 'Depilación con cera',
-        price: 32
+        name: 'Consulta de ginecología',
+        price: 75
     },
     {
-        name: 'Tratamientos faciales para hombres y mujeres',
-        price: 15
+        name: 'Consulta de oftalmología',
+        price: 70
     },
     {
-        name: 'Tratamientos de exfoliación corporal',
-        price: 28
+        name: 'Prueba de esfuerzo',
+        price: 90
     },
     {
-        name: 'Masajes relajantes para aliviar el estrés y la tensión muscular',
-        price: 31
+        name: 'Consulta de nutrición',
+        price: 50
     },
     {
-        name: 'Extensiones de pelo',
-        price: 49
+        name: 'Tratamiento para control de peso',
+        price: 85
     },
     {
-        name: 'Maquillaje de cejas y pestañas',
-        price: 8
+        name: 'Masaje terapéutico',
+        price: 65
     },
     {
-        name: 'Teñido de cejas y pestañas',
-        price: 12
+        name: 'Consulta de psicología',
+        price: 60
     },
     {
-        name: 'Tratamientos de bronceado',
-        price: 37
+        name: 'Sesión de acupuntura',
+        price: 55
+    },
+    {
+        name: 'Chequeo médico anual',
+        price: 150
+    },
+    {
+        name: 'Prueba de alergias',
+        price: 95
     }
 ];
