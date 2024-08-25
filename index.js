@@ -34,7 +34,7 @@ const corsOptions = {
             callback(null, true);
         } else {
             //Bloquea la conexión
-            callback(new Error('Error de CORS', origin));
+            callback(new Error(`Error de CORS: ${origin}`));
         }
     }
 };
