@@ -23,13 +23,13 @@ db();
 //Configurar CORS
 const whitelist = [process.env.FRONTEND_URL];
 
-if(process.argv[2] === '--postman') {
+if (process.argv[2] === '--postman') {
     whitelist.push(undefined);
 }
 
 const corsOptions = {
     origin: function (origin, callback) {
-        if(whitelist.includes(origin)) {
+        if (whitelist.includes(origin)) {
             //Permite la conexión
             callback(null, true);
         } else {
@@ -42,6 +42,19 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //Definir una ruta
+app.get("/", (req, res) => {
+    const htmlResponse = `
+        <html>
+            <head>
+                <title>Bookit - API</title>
+            </head>
+            <body>
+                <h1>Soy un proyecto Back end en vercel</h1>
+            </body>
+        </html>
+    `;
+    res.send(htmlResponse);
+});
 app.use('/api/services', servicesRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/bookings', bookingRoutes);
