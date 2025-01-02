@@ -55,7 +55,7 @@ const verifyAccount = async (req, res) => {
 
     const user = await User.findOne({ token });
     if (!user) {
-        const error = new Error('Token no válido.');
+        const error = new Error('El token no es válido o ya ha sido utilizado.');
 
         return res.status(401).json({
             msg: error.message
@@ -151,7 +151,7 @@ const verifyPasswordResetToken = async (req, res) => {
 
     const isValidToken = await User.findOne({ token });
     if (!isValidToken) {
-        const error = new Error('Token no válido.');
+        const error = new Error('El token no es válido o ya ha sido utilizado.');
 
         return res.status(400).json({
             msg: error.message
@@ -170,7 +170,7 @@ const updatePassword = async (req, res) => {
 
     const user = await User.findOne({ token });
     if (!user) {
-        const error = new Error('Token no válido.');
+        const error = new Error('El token no es válido o ya ha sido utilizado.');
 
         return res.status(400).json({
             msg: error.message
